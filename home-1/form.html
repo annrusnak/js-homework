@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Testing Form</title>
+</head>
+<body>
+<h2>My first testing form</h2>
+  <p>Here are some test questions</p>
+  <form action="success.html">
+  <fieldset>
+    <legend>Questions:</legend>
+    First name<br>
+    <input type="text" name="firstname" value=""required><br>
+    Last name<br>
+    <input type="text" name="lastname" value=""required><br>
+     Create your password:<br>
+  <input type="password" name="pass"><br>
+     Enter your email:<br>
+  <input type="email" name="email"><br>
+      Enter your phone:<br>
+  <input type="tel" name="tel"><br>
+    Your birthday:<br>
+  <input type="date" name="date"required><br>
+    <br/>Upload smth:<br>
+  <input type="file" name="file"><br>
+    <br/>
+    Choose your sex:<br/>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <br/>
+     Country<br/>
+    <select name="country">
+    <option value="ua">Ukraine</option>
+    <option value="us">USA</option>
+    <option value="pl">Poland</option>
+    <option value="de">Germany</option>
+  </select><br/>
+    <br/>
+    What are your hobbies?<br/>
+    <textarea name="message" rows="8" cols="40"></textarea>
+    <br/>
+    <br><input type="submit" value="Submit">
+</form>
+  <button type="button" onclick="alert('Nothing happend')">Click Me!</button>
+    <input type="reset" name="Submit2" value="Reset">
+ </fieldset>
+</body>
+</html>
