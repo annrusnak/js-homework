@@ -1,0 +1,17 @@
+div#logo {
+    display:inline-block;
+   
+    transform:scale(0.5,1.2);
+      font-size: 250px;
+  font-family: 'source-sans-pro-regular',sans-serif,helvetica,arial;
+    color:#464547;
+    letter-spacing: -10px;
+}
+
+.brackets{
+    font-size: 200px;
+    font-family: 'source-sans-pro-regular',sans-serif,helvetica,arial;
+color: #39C2D7;
+    transform: scaleY(1.1);
+   
+}
