@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JS Homework 2: querySelector, date, timeout</title>
+</head>
+<body>
+<!-- Task 2  -->
+  <h1>World time</h1>
+  <ul>
+    <li data-location="london">London - <span class="time">null</span></li>
+    <li data-location="kiev">Kiev - <span class="time">null</span></li>
+    <li data-location="warshawa">Warshawa - <span class="time">null</span></li>
+    <li data-location="los angeles">Los Angeles - <span class="time">null</span></li>
+    <li data-location="new york">New York - <span class="time">null</span></li>
+  </ul>
+<script>
+var date = new Date();
+var day = date.getDate();
+var month = new Array();
+month[0] = 01;
+month[1] = 02;
+month[2] = 03;
+month[3] = 04;
+month[4] = 05;
+month[5] = 06;
+month[6] = 07;
+month[7] = 08;
+month[8] = 09;
+month[9] = 10;
+month[10] = 11;
+month[11] = 1;
+var currentMonth = month[date.getMonth()];
+var year = date.getFullYear();
+var hour = date.getUTCHours();
+var minutes = date.getMinutes();
+var list = document.getElementsByTagName('li');
+var hourKiev=parseInt(hour)+2;
+var hourWar=parseInt(hour)+1;
+var hourLA=parseInt(hour)-8;
+var hourNY=parseInt(hour)-5;
+list[0].getElementsByTagName('span')[0].innerHTML=day+'.0'+currentMonth+'.'+year+' - '+hour+':'+minutes;
+list[1].getElementsByTagName('span')[0].innerHTML=day+'.0'+currentMonth+'.'+year+' - '+hourKiev+':'+minutes;
+list[2].getElementsByTagName('span')[0].innerHTML=day+'.0'+currentMonth+'.'+year+' - '+hourWar+':'+minutes;
+list[3].getElementsByTagName('span')[0].innerHTML=day+'.0'+currentMonth+'.'+year+' - '+hourLA+':'+minutes;
+list[4].getElementsByTagName('span')[0].innerHTML=day+'.0'+currentMonth+'.'+year+' - '+hourNY+':'+minutes;
+</script>
+</body>
+</html>
