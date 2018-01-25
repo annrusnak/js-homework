@@ -10,10 +10,9 @@
         <li>Some text <button onclick="remove(this)">Remove this line</button></li>
     </ul>
     <script>
-     //  function remove(link) { 
-   // link.parentNode.parentNode.removeChild(link.parentNode);
-//}
-        $("li button").click(function() { $(this).closest("li").remove(); }); 
+      function remove(link) { 
+        link.parentNode.remove();
+      }
         //При клыку на кнопку - видаляти рядок.
         //Зробити універсальний спочіб, який не залежить від кількості рядків
     </script>

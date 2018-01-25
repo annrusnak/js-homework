@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .red {
+        color: red;
+      }
+      .device {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to <span>iPhone</span> Store</h1>
+    <h2>Say hello to the future!</h2>
+    <ul class="device">
+      <li>
+        <h4>iPhone X</h4>
+        <ul>
+          <li>The future of smartphones</li>
+          <li>Price: <span>1299$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="device">
+      <li>
+        <h4>iPhone 8</h4>
+        <ul>
+          <li>the new generation of iPhone</li>
+          <li>Price: <span>700$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="device">
+      <li>
+        <h4>iPhone 7</h4>
+        <ul>
+          <li>the new generation of iPhone</li>
+          <li>Price: <span>600$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h4>iPhone SE</h4>
+        <ul>
+          <li>small and smart one</li>
+          <li>Price: <span>500$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+    var list = document.getElementsByClassName('device');
+
+
+for(i=0;i<list.length;i++){
+
+ var elem = list[i].children[0].children[1].children;
+  var text = elem[0].innerHTML.substring(0,1).toUpperCase() + elem[0].innerHTML.substring(1, elem[0].length);
+  elem[0].innerHTML=text;
+  var price = elem[1].children;
+  price[0].classList.add('red');
+  
+}
+var cln = list[0].cloneNode(true);
+var iphonefive = document.getElementsByTagName("body")[0].appendChild(cln);
+iphonefive.getElementsByTagName('h4')[0].innerHTML='iPhone 5';
+iphonefive.getElementsByTagName('ul')[0].children[0].innerHTML='Our Hero';
+iphonefive.getElementsByTagName('ul')[0].children[1].children[0].innerHTML='300$';
+
+
+var elements = document.getElementsByTagName('body')[0].children;
+for (i=0;i<elements.length;i++){
+  if (elements[i].tagName=="UL" && elements[i].className !=='device'){
+   elements[i].classList.add('device');
+  }
+}
+
+for(i=0;i<list.length;i++){
+  var name = list[i].children[0].children[0].innerHTML;
+  var newName = name.replace("iPhone","Android");
+  list[i].children[0].children[0].innerHTML = newName; //why name=newName doesnt work?
+}
+
+    </script>
+  </body>
+</html>
