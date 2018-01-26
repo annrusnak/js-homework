@@ -82,8 +82,35 @@ for (i=0;i<elements.length;i++){
 for(i=0;i<list.length;i++){
   var name = list[i].children[0].children[0].innerHTML;
   var newName = name.replace("iPhone","Android");
-  list[i].children[0].children[0].innerHTML = newName; //why name=newName doesnt work?
+  list[i].children[0].children[0].innerHTML = newName; 
 }
+
+var currency={
+        data:{
+          name:null,
+          rank: null,
+          symbol: null
+        },
+        set : function(elem){
+          this.data = elem;
+        },
+        convert : function (price){
+          return this.data.rank * price + this.data.symbol;
+        }
+      }
+      data = {
+        name: "hryvnya",
+        rank: 25,
+        symbol: "uah"
+      };
+      currency.set(data);
+        var prices = document.getElementsByTagName('span');
+        for (var i = 1; i < prices.length; i++) {
+          var price = prices[i].innerHTML;
+          price = price.substring(0, price.length-1);
+         var newPrice = currency.convert(price);
+         prices[i].innerHTML = newPrice;
+      }
 
     </script>
   </body>
