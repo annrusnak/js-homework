@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Online shop</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body> 
+        <div class="products">
+      <div class="product">
+          <div class="product_small">
+          <div class="product_image">
+        <img alt="product image"  src="https://images2.junkmail.co.za/api/storage/345b9eb3-a838-4567-a155-bfe3d37aec70/images/223b87a20b39447eb728014e0c655774.jpg" >
+              </div>
+         <h3 class="product_name">iPhone 5</h3>
+          <div class="product_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+          <br><span class="product_price"><b>125$</b></span>
+          
+          <button type="button" onclick=addtocart(this) class="iphone5" id='125'>Купити</button>
+        </div>
+            </div>
+        
+        <div class="product">
+            <div class="product_small">
+          <div class="product_image">
+        <img alt="product image" src="https://images-na.ssl-images-amazon.com/images/I/515Fh3bfSRL._SX425_.jpg">
+              </div>
+          <h3 class="product_name">iPhone 6</h3>
+            <div class="product_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
+          <br><span class="product_price"><b>350$</b></span>
+          
+          <button type="button" onclick=addtocart(this) class="iphone6" id='350'>Купити</button>
+        </div>
+            </div>
+        
+        <div class="product">
+            <div class="product_small">
+          <div class="product_image">
+        <img alt="product image"  src="https://www.proximus.be/dam/jcr:53c0f4c3-3624-4646-9380-141f11a14015/cdn/sites/iportal/images/products/device/a/apple-iphone-7-32gb-black/detail/apple-iphone-7-32gb-black-XS-1~2016-09-09-09-22-57~cache.jpg" >
+              
+              </div>
+          <h3 class="product_name">iPhone 7</h3>
+            <div class="product_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
+          <br><span class="product_price"><b>666$</b></span>
+          <button type="button" onclick=addtocart(this) class="iphone7" id='666'>Купити</button>
+        </div>
+            </div>
+        
+        <div class="product">
+            <div class="product_small">
+          <div class="product_image">
+        <img alt="product image" src="https://images-na.ssl-images-amazon.com/images/I/61lMn0%2BjtRL._SY355_.jpg">
+              </div>
+          <h3 class="product_name">iPhone X</h3>
+            <div class="product_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
+         <br> <span class="product_price"><b>1000$</b></span>
+         <button type="button" onclick=addtocart(this) class="iphonex" id='1000'>Купити</button>
+        </div>
+            </div>
+            </div>
+       <div class="cart">
+            <div class='cartelements' id="cart">
+            <div class='aaa' id='iphone5' style='display:none'><p>iPhone5 <span class='price'>125$</span><span class='quantity'> Quantity: 1</span></p></div>
+            <div class='aaa' id='iphone6' style='display:none'><p>iPhone6 <span class='price'>350$</span><span class='quantity'> Quantity: 1</span></p></div>
+            <div class='aaa' id='iphone7' style='display:none'><p>iPhone7 <span class='price'>666$</span><span class='quantity'> Quantity: 1</span></p></div>
+            <div class='aaa'id='iphonex' style='display:none'><p>iPhoneX <span class='price'>1000$</span><span class='quantity'> Quantity: 1</span><span class="cartbuttons">
+                    </p></div>
+           </div>
+           
+                <hr/>
+            
+            </div>
+        <script>
+
+  function addtocart(item){
+  var className = item.className;
+      var cart = document.getElementsByClassName('cartelements')[0].children;
+     
+for (i=0;i<cart.length;i++){
+  if (cart[i].id===className){
+            if (cart[i].style.display =='none'){
+                cart[i].style.display = 'block';
+            } else {
+                var quantity = cart[i].getElementsByClassName('quantity')[0].innerHTML;
+                var number = quantity.substring(quantity.length-1);  
+              cart[i].getElementsByClassName('quantity')[0].innerHTML=' Quantity: '+ (parseInt(number,10)+1);
+            }
+  }
+}
+        }
+            
+
+        </script>
+    </body>
+    </html> 
